@@ -1,10 +1,10 @@
 package handle
 
 import (
-	"gin-grom-demo/database"
+	"gin-gorm-demo/database"
 	"github.com/gin-gonic/gin"
-	modal "gin-grom-demo/model"
-	result "gin-grom-demo/common"
+	modal "gin-gorm-demo/model"
+	result "gin-gorm-demo/common"
 
 )
 

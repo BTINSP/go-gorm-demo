@@ -6,8 +6,8 @@ import (
 )
 
 var (
-	OK				= StatusCode(200, "success")
-	BadRequest		= StatusCode(400, "fail")
+	OK				= statusCode(200, "success")
+	BadRequest		= statusCode(400, "fail")
 )
 
 
@@ -17,7 +17,7 @@ type Response struct {
 	Data interface{}	`json:"data"`
 }
 
-func StatusCode(code int, message string) Response {
+func statusCode(code int, message string) Response {
 	return Response {
 		code,
 		message,

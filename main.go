@@ -1,8 +1,8 @@
 package main
 
 import (
-	"gin-grom-demo/database"
-	"gin-grom-demo/router"
+	"gin-gorm-demo/database"
+	"gin-gorm-demo/router"
 )
 
 

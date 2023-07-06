@@ -1,7 +1,8 @@
 package router
 
 import (
-	"gin-grom-demo/handle"
+	"gin-gorm-demo/handle"
+	"gin-gorm-demo/middleware"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -11,11 +12,10 @@ import (
 func Init() *gin.Engine {
 	engine := gin.Default()
 
-	engine.GET("/", Index)
+	engine.GET("/", Index)	
 
-	
-	userRouter := engine.Group("/user")
-	userRouter.GET("/get", handle.UserGetUserByIdHandle)
+	userRouter := engine.Group("/user", middleware.Authorization)
+	userRouter.GET("/get",handle.UserGetUserByIdHandle)
 
 
 	engine.NoRoute(NoRoute)
