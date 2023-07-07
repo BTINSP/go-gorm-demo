@@ -15,4 +15,5 @@ func Authorization(ctx *gin.Context) {
 	}
 	result.Fail(ctx, result.UnAuthorization, nil)
 	ctx.Abort()
+	return
 } 

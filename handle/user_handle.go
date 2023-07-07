@@ -11,7 +11,7 @@ import (
 
 
 //	Method: GET Path: /user/get
-func UserGetUserByIdHandle(ctx *gin.Context) {
+func GetUserByIdHandle(ctx *gin.Context) {
 
 	id := ctx.Query("id")
 
@@ -20,4 +20,13 @@ func UserGetUserByIdHandle(ctx *gin.Context) {
 	db.Table("user").Find(&user, "id = ?", id)
 
 	result.Default(ctx, result.OK, user)
+}
+
+//	Method: GET Path: /user/all
+func GetAllUser(ctx *gin.Context) {
+
+	var users []modal.User
+	database.GetDB().Table("user").Find(&users)
+
+	result.Success(ctx, users)
 }
