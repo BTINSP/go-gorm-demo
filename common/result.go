@@ -6,8 +6,9 @@ import (
 )
 
 var (
-	OK				= statusCode(200, "success")
-	BadRequest		= statusCode(400, "fail")
+	OK					= statusCode(200, "success")
+	BadRequest			= statusCode(400, "fail")
+	UnAuthorization		= statusCode(401, "请先登陆.")
 )
 
 

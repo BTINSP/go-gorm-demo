@@ -10,9 +10,9 @@ import (
 func Authorization(ctx *gin.Context) {
 	auth := ctx.GetHeader("auth")
 	if auth == "jwt" {
+		ctx.Next()
 		return
 	}
-	
-	result.Fail(ctx, result.BadRequest, nil)
-	return
+	result.Fail(ctx, result.UnAuthorization, nil)
+	ctx.Abort()
 } 
